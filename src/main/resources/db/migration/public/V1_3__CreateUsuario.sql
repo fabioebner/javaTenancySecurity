@@ -8,6 +8,6 @@ CREATE TABLE tb_usuario(
     cadastro TIMESTAMP WITHOUT TIME ZONE NOT NULL
 );
 
-INSERT INTO tb_usuario(instituicao_id, nome, email, senha, lembrete_senha, cadastro) VALUES (1,'cartorio','cartorio@teste.com.br','1234','14', now());
-INSERT INTO tb_usuario(instituicao_id, nome, email, senha, lembrete_senha, cadastro) VALUES (2,'Pf','pf@teste.com.br','1234','14', now());
-INSERT INTO tb_usuario(instituicao_id, nome, email, senha, lembrete_senha, cadastro) VALUES (3,'cliente','cliente@teste.com.br','1234','14', now());
+INSERT INTO tb_usuario(instituicao_id, nome, email, senha, lembrete_senha, cadastro) VALUES (1,'cartorio','cartorio@teste.com.br','$2a$11$Sgkspfa6rThBAKr03H2PYOlZVgRWOQ8meBOGRlhf3AtMankz.D.2O','14', now());
+INSERT INTO tb_usuario(instituicao_id, nome, email, senha, lembrete_senha, cadastro) VALUES (2,'Pf','pf@teste.com.br','$2a$11$Sgkspfa6rThBAKr03H2PYOlZVgRWOQ8meBOGRlhf3AtMankz.D.2O','14', now());
+INSERT INTO tb_usuario(instituicao_id, nome, email, senha, lembrete_senha, cadastro) VALUES (3,'cliente','cliente@teste.com.br','$2a$11$Sgkspfa6rThBAKr03H2PYOlZVgRWOQ8meBOGRlhf3AtMankz.D.2O','14', now());
