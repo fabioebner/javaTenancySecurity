@@ -29,7 +29,7 @@ public class MultiTenantFilter implements Filter {
         HttpServletRequest req = (HttpServletRequest) request;
         logger.info("Tentando acessar: " + req.getRequestURI());
         //TODO deve pegar de acordo com o usuario logado
-        req.setAttribute(tenantKey, "db_teste");
+//        req.setAttribute(tenantKey, "db_teste");
         chain.doFilter(request, response);
     }
 

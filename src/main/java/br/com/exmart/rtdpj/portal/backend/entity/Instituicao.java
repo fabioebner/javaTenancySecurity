@@ -1,6 +1,7 @@
 package br.com.exmart.rtdpj.portal.backend.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.time.LocalDateTime;
 
 @Entity
@@ -11,6 +12,9 @@ public class Instituicao extends  AbstractEntity{
     @PrimaryKeyJoinColumn
     private TipoInstituicao tipo;
     private LocalDateTime cadastro;
+    @NotEmpty
+    @Column(name = "nome_schema")
+    private String nomeSchema;
 
     public String getNome() {
         return nome;
@@ -34,5 +38,13 @@ public class Instituicao extends  AbstractEntity{
 
     public void setCadastro(LocalDateTime cadastro) {
         this.cadastro = cadastro;
+    }
+
+    public String getNomeSchema() {
+        return nomeSchema;
+    }
+
+    public void setNomeSchema(String nomeSchema) {
+        this.nomeSchema = nomeSchema;
     }
 }

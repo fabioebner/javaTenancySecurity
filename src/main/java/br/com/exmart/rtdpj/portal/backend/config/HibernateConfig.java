@@ -27,7 +27,7 @@ public class HibernateConfig {
                                                                        CurrentTenantIdentifierResolver tenantIdentifierResolver) {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource);
-        em.setPackagesToScan("br.com.exmart.rtdpj.portal.backend.entity");
+        em.setPackagesToScan("br.com.exmart.rtdpj.portal.backend.entity","br.com.exmart.rtdpj.portal.backend.entity.privado");
 
         em.setJpaVendorAdapter(this.jpaVendorAdapter());
 

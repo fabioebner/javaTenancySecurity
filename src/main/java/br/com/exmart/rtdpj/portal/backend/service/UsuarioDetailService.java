@@ -1,5 +1,6 @@
 package br.com.exmart.rtdpj.portal.backend.service;
 
+import br.com.exmart.rtdpj.portal.backend.config.MyUser;
 import br.com.exmart.rtdpj.portal.backend.entity.Permissao;
 import br.com.exmart.rtdpj.portal.backend.entity.Usuario;
 import br.com.exmart.rtdpj.portal.backend.repository.PermissaoRepository;
@@ -9,7 +10,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -46,8 +46,8 @@ public class UsuarioDetailService implements UserDetailsService {
             log.info("Permissao: " + role.getNome());
             permissoes.add(new SimpleGrantedAuthority(role.getNome()));
         }
-        UserDetails userDetails = (UserDetails)new User(usuario.getEmail(),
-                usuario.getSenha(), permissoes);
+        UserDetails userDetails = (UserDetails)new MyUser(usuario.getEmail(),
+                usuario.getSenha(), permissoes, usuario.getInstituicao().getNomeSchema());
         return userDetails;
     }
 }
